@@ -8,7 +8,7 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
         - name: list files
-          uses: ls -lrtha
+          run: ls -lrtha
         - name: Executing Shell script
           run: ./ascii-script.sh
 
