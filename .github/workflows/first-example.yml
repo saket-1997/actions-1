@@ -13,3 +13,6 @@ jobs:
             echo "My First Gitlab action job"
             ls
             cat  README.md
+        - name: Generating ASCII Art framework
+          run: cowsay -f dragon "Run for cover, I am dragon...RAWR" >> dragon.txt
+          
