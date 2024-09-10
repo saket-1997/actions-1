@@ -7,8 +7,11 @@ jobs:
         steps:
         - name: checkout repo
           uses: actions/checkout@v4
+
         - name: list files
           run: ls -lrtha
+
         - name: Executing Shell script
           run: ./ascii-script.sh
+          
 
