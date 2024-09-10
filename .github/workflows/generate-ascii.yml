@@ -2,16 +2,24 @@ name: Generate ASCII Framework
 
 on: push
 jobs:
-    ascii_job:
+    build_job:
         runs-on: ubuntu-latest
         steps:
         - name: checkout repo
           uses: actions/checkout@v4
+        - name: Install cowsay
+          run: sudo apt-get install cowsay -y
+        - name: Execute cowsay
+          run: cowsay -f dragon "Run for cover, I am a Dragon....RAWR" >> dragon.txt
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Grep content
+          run: grep -i "dragon" dragon.txt
+    deploy_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Cat content
+          run: cat dragon.txt
 
-        - name: list files
-          run: ls -lrtha
-
-        - name: Executing Shell script
-          run: ./ascii-script.sh
-          
 
