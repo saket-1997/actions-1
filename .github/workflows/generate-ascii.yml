@@ -28,6 +28,9 @@ jobs:
           run: grep -i "dragon" dragon.txt
     deploy_job:
         needs: [test_job]
+        concurrency: 
+          group: production-deployment
+          cancel-in-progress: true
         runs-on: ubuntu-latest
         steps:
         - name: Download Artifacts
