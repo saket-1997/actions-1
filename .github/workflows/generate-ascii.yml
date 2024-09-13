@@ -37,6 +37,6 @@ jobs:
         - name: Cat content
           run: cat dragon.txt
         - name: sleep
-          run: 600s
+          run: sleep 600s
 
 
