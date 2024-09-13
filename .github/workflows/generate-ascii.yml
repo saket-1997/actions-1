@@ -30,7 +30,7 @@ jobs:
         needs: [test_job]
         concurrency: 
           group: production-deployment
-          cancel-in-progress: true
+          cancel-in-progress: false
         runs-on: ubuntu-latest
         steps:
         - name: Download Artifacts
