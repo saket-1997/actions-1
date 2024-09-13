@@ -1,6 +1,6 @@
 name: Generate ASCII Framework
 
-on: push
+on: workflow_dispatch
 jobs:
     build_job:
         runs-on: ubuntu-latest
@@ -36,5 +36,7 @@ jobs:
             name: dragon-content-file
         - name: Cat content
           run: cat dragon.txt
+        - name: sleep
+          run: 600
 
 
